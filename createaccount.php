@@ -40,7 +40,7 @@ session_start ();
 
           $bdd->exec("INSERT INTO Account(Nom, Prenom, DateNaissance, Email, MotDePasse, Admin) 
                 VALUES('$Nom','$Prenom','$DateNaissance','$Email','$MotDePasse',0)");
-          header('Location: /blogtimmy/newblogtimmy.php');
+          header('Location: profil.php');
           exit();
         }
     } catch (PDOException $e) {
