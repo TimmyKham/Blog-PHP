@@ -1,0 +1,28 @@
+body {
+    background: #3E6F8D;
+}
+
+h1{
+    font-size: 40px;
+    color: white;
+} 
+
+input {
+    width: 30%;
+    padding: 5px;
+    border: none;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    margin-left: 35%;
+}
+
+#result {
+    margin:2%; 
+    padding: 1%;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    margin-left: 25%;
+    width: 50%;
+}

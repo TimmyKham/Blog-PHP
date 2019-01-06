@@ -31,7 +31,7 @@ session_start ();
                   $req = $bdd->prepare('SELECT * FROM Account WHERE Email = ? AND MotDePasse = ?');
                   $req->execute(array($_POST['Email'],$_POST['MotDePasse']));
                     if ($req->rowCount() == 1) {
-                        header('Location: admin.php');
+                        header('Location: menuadmin.php');
                     }
                     else{
                         echo "Email ou Mot de passe incorrect !";
