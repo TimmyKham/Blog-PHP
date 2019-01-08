@@ -19,27 +19,28 @@
     </ul>
   </nav>
   <div class="leftcolumn">
-    <div class="card">
-        <?php
-    try {
-        $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy;charset=utf8', 'root', 'root');
-    }
-    catch(Exception $e) {
-        die('Erreur : '.$e->getMessage());
-    }
-    $reponse = $bdd->query('SELECT * FROM Account INNER JOIN Article ON Account.id = Article.id_compte ORDER BY id_compte DESC');
-    while ($donnees = $reponse->fetch())  {
-    ?>
+    <?php
+      try {
+          $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy;charset=utf8', 'root', 'root');
+      }
+      catch(Exception $e) {
+          die('Erreur : '.$e->getMessage());
+      }
+      $reponse = $bdd->query('SELECT * FROM Account INNER JOIN Article ON Account.id = Article.id_compte ORDER BY id_compte DESC');
+      while ($donnees = $reponse->fetch())  {
+      ?>
+            <div class="card">
             <h2><?php echo $donnees['titre']; ?></h2>
             <h5><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?>, <?php echo $donnees['date_article']; ?></h5> 
             <div><img class="fakeimg" style="height:200px;" src="images/bannersmash.jpg""></div>
             <p class="trailer"><strong><?php echo $donnees['gros_titre']; ?></strong></p>
             <p><?php echo $donnees['description']; ?></p>
+            </div>
     <?php
     }
     $reponse->closeCursor();
     ?>
-    </div>
+    
   </div>
   <div class="rightcolumn">
     <div class="card">
@@ -51,18 +52,25 @@
 
     <div class="card">
       <h3>Commentaires</h3>
-      <div class="comment">
-        <p>"WOW"</p>
-        <p>Timmy.K</p>
+      <?php
+      try {
+          $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy;charset=utf8', 'root', 'root');
+      }
+      catch(Exception $e) {
+          die('Erreur : '.$e->getMessage());
+      }
+      $reponse = $bdd->query('SELECT * FROM Account INNER JOIN Comment ON Account.id = Comment.id_compte ORDER BY id_compte DESC');
+      while ($donnees = $reponse->fetch())  {
+      ?>
+        <div class="comment">
+        <p><strong><?php echo $donnees['commentaire']; ?></strong></p>
+        <p><strong><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> </strong><?php echo $donnees['date_commentaire']; ?></p>
+        <p>
       </div><br>
-      <div class="comment">
-      <p>"Excellent"</p>
-      <p>Timmy.K</p>
-    </div><br>
-      <div class="comment">
-      <p>"Génial"</p>
-      <p>Timmy.K</p>
-    </div>
+    <?php
+    }
+    $reponse->closeCursor();
+    ?>
     </div>
   </div>
 </div>
