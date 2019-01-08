@@ -16,7 +16,6 @@
      <li><a class="nav" href="#">Accueil</a></li>
      <li><a class="nav" href="createaccount.php">Crée un compte</a></li>
      <li><a class="nav" href="connexion.php">Connexion</a></li>
-     <li><a class="nav" href="profil.php">Profil</a></li>
     </ul>
   </nav>
   <div class="leftcolumn">
