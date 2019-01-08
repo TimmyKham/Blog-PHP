@@ -61,11 +61,8 @@
     </div><br>
       <div class="comment">
       <p>"Génial"</p>
-      <p>Timmy.K</p></div>
+      <p>Timmy.K</p>
     </div>
-    <div class="card">
-      <h3>INFOS</h3>
-      <p>blabla</p>
     </div>
   </div>
 </div>

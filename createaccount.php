@@ -38,8 +38,8 @@ session_start ();
           $Email=$_POST['Email'];
           $MotDePasse=sha1($_POST['MotDePasse']);
 
-          $bdd->exec("INSERT INTO Account(Nom, Prenom, DateNaissance, Email, MotDePasse, Admin) 
-                VALUES('$Nom','$Prenom','$DateNaissance','$Email','$MotDePasse',0)");
+          $bdd->exec("INSERT INTO Account(Nom, Prenom, DateNaissance, Email, MotDePasse, Profil) 
+                VALUES('$Nom','$Prenom','$DateNaissance','$Email','$MotDePasse','User')");
           header('Location: profil.php');
           exit();
         }
