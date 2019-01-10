@@ -26,7 +26,7 @@
       catch(Exception $e) {
           die('Erreur : '.$e->getMessage());
       }
-      $reponse = $bdd->query('SELECT * FROM Account INNER JOIN Article ON Account.id = Article.id_compte ORDER BY id_compte DESC');
+      $reponse = $bdd->query('SELECT * FROM Account INNER JOIN Article ON Account.id = Article.id_compte ORDER BY id_article DESC');
       while ($donnees = $reponse->fetch())  {
       ?>
             <div class="card">

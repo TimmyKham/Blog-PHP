@@ -9,14 +9,14 @@
     <div id="container"> 
       <h1>Session Administrateur</h1>
         <div class="big-cube">
-          <button class="cube" onclick="location.href='profil.php'"><p>Profil</p></button>
-          <button class="cube" onclick="location.href='createarticle.php'"><p>Créer un Article</p></button>
-          <button class="cube" onclick="location.href='#'"><p>Modifier un Article</p></button>
-          <button class="cube" onclick="location.href='#'"><p>Commentaire</p></button>
-          <button class="cube" onclick="location.href='gestion.php'"><p>Utilisateurs</p></button>
-          <button class="cube" onclick="location.href='#'"><p>Ajouter</p></button>
-          <button class="cube" onclick="location.href='#'"><p>Modifier</p></button>
-          <button class="cube" onclick="location.href='#'"><p>Supprimer</p></button>
+          <button class="cube" onclick="location.href='gestion.php'"><p>Profil</p></button>
+          <button class="cube" onclick="location.href='createarticle.php'"><p>Créer un article</p></button>
+          <button class="cube" onclick="location.href='modifyarticle.php'"><p>Modifier un article</p></button>
+          <button class="cube" onclick="location.href='createcommentaire.php'"><p>Créer un commentaire</p></button>
+          <button class="cube" onclick="location.href='modifycommentaire.php'"><p>Modifier un commentaire</p></button>
+          <button class="cube" onclick="location.href='createaccount.php'"><p>Créer un compte</p></button>
+          <button class="cube" onclick="location.href='modifyaccount.php'"><p>Modifier un compte</p></button>
+          <button class="cube" onclick="location.href='#'"><p>Déconnexion</p></button>
         </div> 
     </div>
   </body>
