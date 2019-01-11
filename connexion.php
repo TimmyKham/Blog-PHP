@@ -9,7 +9,7 @@ session_start ();
       <meta charset="utf-8">
       <link rel="stylesheet" type="text/css" href="css/connexion.css">
    </head>
-   <body>
+   <body background="images/blurblogtimmy.jpg">
       <div id=container>
          <form method="POST" action="">
           <h1>Connexion</h1>

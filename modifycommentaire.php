@@ -8,7 +8,7 @@ session_start ();
         <link rel="stylesheet" type="text/css" href="css/modifycommentaire.css" />
        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
    </head>
-   <body>
+   <body background="images/blurblogtimmy.jpg">
     <div id="container">  
       <form method="post">
         <h1>Supprimer</h1>

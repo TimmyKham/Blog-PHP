@@ -4,10 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/newblogtimmy.css">
 </head>
-<body src="/images/blur-background.jpg">
+<body background="images/blurblogtimmy.jpg">
 
 <div class="header">
-  <h2>Blog de Timmy</h2>
+  <img style="width: 100%;" src="images/video-games-banner.jpg">
 </div>
 
 <div class="row">
@@ -45,8 +45,6 @@
   <div class="rightcolumn">
     <div class="card">
       <h2>Utilisateur</h2>
-    <div class="comment" style="height:100px;">
-    </div>
       <p>Bonjour</p>
     </div>
 

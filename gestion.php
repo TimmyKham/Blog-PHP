@@ -5,7 +5,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/gestion.css">
  </head>
- <body>
+ <body background="images/blurblogtimmy.jpg">
   <div class="container"><br/>
     <h1 align="center">Utilisateurs Blog Timmy</h1><br />
       <div class="form-group">
