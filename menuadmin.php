@@ -12,8 +12,8 @@
           <button class="cube" onclick="location.href='gestion.php'"><p>Profil</p></button>
           <button class="cube" onclick="location.href='createarticle.php'"><p>Créer un article</p></button>
           <button class="cube" onclick="location.href='modifyarticle.php'"><p>Modifier un article</p></button>
-          <button class="cube" onclick="location.href='createcommentaire.php'"><p>Créer un commentaire</p></button>
-          <button class="cube" onclick="location.href='modifycommentaire.php'"><p>Modifier un commentaire</p></button>
+          <button class="cube" onclick="location.href='createcommentaire.php'"><p>Créer Commentaire</p></button>
+          <button class="cube" onclick="location.href='modifycommentaire.php'"><p>Modifier Comment</p></button>
           <button class="cube" onclick="location.href='createaccount.php'"><p>Créer un compte</p></button>
           <button class="cube" onclick="location.href='modifyaccount.php'"><p>Modifier un compte</p></button>
           <button class="cube" onclick="location.href='#'"><p>Déconnexion</p></button>
