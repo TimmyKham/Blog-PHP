@@ -1,10 +1,10 @@
 body{
-    background-color: : #333;
+    background-color: #333;
 }
 
 #container{
     width:400px;
-    margin-left: 35%;
+    margin:0 auto;
     margin-top:10%;
 }
 
@@ -16,9 +16,8 @@ form {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 #container h1{
-    width: 50%;
-    margin-left: 30% ;
-    margin-bottom: 2%; 
+    width: 38%;
+    margin: 0 auto;
     padding-bottom: 10px;
 }
 

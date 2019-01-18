@@ -11,7 +11,7 @@ session_start ();
    <body background="images/blurblogtimmy.jpg">
     <div id="container">  
       <form method="post">
-        <h1>Modifier</h1>
+        <h1>Editer</h1>
         
   <?php
     try {
@@ -19,7 +19,7 @@ session_start ();
         $select = $bdd->query("SELECT * FROM Comment");
         while ($tabCom = $select->fetch()) {
 
-          echo "id : "."<b>".$tabCom[0]."</b>"." Commentaire :"."<b>".$tabCom[2]."</b>"." Date : "."<b>".$tabCom[3]."</b>"."<a href='editcommentaire.php?id_commentaire=".$tabCom[0]."'>Modifier</a>"."<a href='suppcommentaire.php?id_commentaire=".$tabCom[0]."'>Supprimer</a><br>";
+          echo "id : "."<b>".$tabCom[0]."</b>"." Commentaire :"."<b>".$tabCom[2]."</b>"." Date : "."<b>".$tabCom[3]."</b>"."<a href='editcommentaire.php?id_commentaire=".$tabCom[0]."'>Modifier </a>"."<a href='suppcommentaire.php?id_commentaire=".$tabCom[0]."'>Supprimer</a><br>";
         }
 
     } catch (PDOException $e) {

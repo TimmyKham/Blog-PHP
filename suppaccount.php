@@ -1,3 +1,4 @@
+
 <?php
       if(isset($_GET['id'])) {
         $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy', 'root', 'root');

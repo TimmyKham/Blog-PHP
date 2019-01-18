@@ -27,18 +27,29 @@ session_start ();
             }
               if (isset($_POST['submit'])) {
                 if (!empty($_POST['Email']) && !empty($_POST['MotDePasse'])) {
-                  $MotDePasse = sha1($_POST['MotDePasse']);
+                  $_POST['MotDePasse'] = sha1($_POST['MotDePasse']);
                   $req = $bdd->prepare('SELECT * FROM Account WHERE Email = ? AND MotDePasse = ?');
                   $req->execute(array($_POST['Email'],$_POST['MotDePasse']));
                     if ($req->rowCount() == 1) {
-                        if (Admin) {
+                      $result = $req -> fetch();
+                        if ($result['Profil'] === 'Admin') {
+                          session_start();
+                          $_SESSION['Profil'] = $result['Profil'];
+                          $_SESSION['Nom'] = $result['Nom'];
+                          $_SESSION['Prenom'] = $result['Prenom'];
                           header('Location: menuadmin.php');
+
                         }
                         else {
                           header('Location: menuuser.php');
+                          session_start();
+                          $_SESSION['Profil'] = $result['Profil'];
+                          $_SESSION['Nom'] = $result['Nom'];
+                          $_SESSION['Prenom'] = $result['Prenom'];
+                          header('Location: menuadmin.php');
                         }
                     }
-                    else{
+                    else {
                         echo "Email ou Mot de passe incorrect !";
                     }
                 }

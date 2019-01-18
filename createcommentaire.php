@@ -11,7 +11,7 @@ session_start ();
    <body background="images/blurblogtimmy.jpg">
     <div id="container">  
       <form method="post">
-        <h1>Création d'un article</h1>
+        <h1>Création d'un commentaire</h1>
         <label><b>Commentaire</b></label>
         <input type="text" placeholder="Entrer le commentaire" name="commentaire" required>
         <label><b>Date de l'article</b></label>
