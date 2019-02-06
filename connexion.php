@@ -1,6 +1,3 @@
-<?php
-session_start ();
-?>
 <!DOCTYPE html>
 </html>
 <html>
@@ -37,7 +34,7 @@ session_start ();
                           $_SESSION['Profil'] = $result['Profil'];
                           $_SESSION['Nom'] = $result['Nom'];
                           $_SESSION['Prenom'] = $result['Prenom'];
-                          header('Location: menuadmin.php');
+                          header('Location: menuadmin.php?id='.$result[0]);
 
                         }
                         else {
@@ -46,7 +43,7 @@ session_start ();
                           $_SESSION['Profil'] = $result['Profil'];
                           $_SESSION['Nom'] = $result['Nom'];
                           $_SESSION['Prenom'] = $result['Prenom'];
-                          header('Location: menuadmin.php');
+                          header('Location: menuuser.php?id='.$result[0]);
                         }
                     }
                     else {
