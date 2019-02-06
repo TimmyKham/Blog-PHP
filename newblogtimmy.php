@@ -29,8 +29,8 @@
     while ($donnees = $reponse->fetch())  {
     ?>  
             <div class="card">
-            <h2><?php echo $donnees['titre']; ?></h2>
-            <h5><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?>, <?php echo $donnees['date_article']; ?></h5> 
+            <h2><a href="displayarticle.php"><?php echo $donnees['titre']; ?></a></h2>
+            <h5><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> - <?php echo $donnees['date_article']; ?></h5> 
             <div><img class="fakeimg" style="height:200px;" src="images/bannersmash.jpg""></div>
             <p class="trailer"><strong><?php echo $donnees['gros_titre']; ?></strong></p>
             </div>
@@ -65,7 +65,7 @@
       ?>
         <div class="comment">
         <p><strong><?php echo $donnees['commentaire']; ?></strong></p>
-        <p><strong><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> </strong><?php echo $donnees['date_commentaire']; ?></p>
+        <p><strong><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> </strong>- <?php echo $donnees['date_commentaire']; ?></p>
       </div><br>
     <?php
     }
