@@ -17,16 +17,18 @@ session_start ();
     try {
         $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy', 'root', 'root'); 
         $select = $bdd->query("SELECT * FROM Article");
+        
+
         while ($tabArticle = $select->fetch()) {
 
-          echo "id : "."<b>".$tabArticle[0]."</b>"." Titre :"."<b>".$tabArticle[1]."</b>"." Date :"."<b>".$tabArticle[3]."</b>"." Gros titre :"."<b>".$tabArticle[4]."</b>"." Description : "."<b>".$tabArticle[5]."</b>"."<a href='editarticle.php?id_article=".$tabArticle[0]."'>Modifier </a>"."<a href='supparticle.php?id_article=".$tabArticle[0]."'>Supprimer</a><br>";
+          echo "<table>"."<td>".$tabArticle['id_article']."</td>"."<td>".$tabArticle['titre']."</td>"."<td>".$tabArticle['date_article']."</td>"."<td>".$tabArticle['gros_titre']."</td>"."<td>".$tabArticle['description']."</td>"."<td><a href='editarticle.php?id_article=".$tabArticle['id_article']."'>Modifier </a></td>"."<td><a href='supparticle.php?id_article=".$tabArticle['id_article']."'>Supprimer</a></td><br></table>";
         }
 
     } catch (PDOException $e) {
         echo 'Connexion échouée : ' . $e->getMessage();
     }
-    
-  ?><a href="newblogtimmy.php">Menu principal</a>
+    ?>
+    <a href="newblogtimmy.php">Menu principal</a>
     </div>
   </body>
   

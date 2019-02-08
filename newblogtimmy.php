@@ -20,23 +20,23 @@
   <div class="leftcolumn">
     <?php
     try {
-        $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy;charset=utf8', 'root', 'root');
-    }
-    catch(Exception $e) {
-        die('Erreur : '.$e->getMessage());
-    }
-    $reponse = $bdd->query('SELECT * FROM Account INNER JOIN Article ON Account.id = Article.id_compte ORDER BY id_article DESC');
-    while ($donnees = $reponse->fetch())  {
+
+        $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy', 'root', 'root'); 
+        $select = $bdd->query("SELECT * FROM Account INNER JOIN Article ON Account.id = Article.id_compte ORDER BY id_article DESC");
+        while ($donnees = $select->fetch()) {
     ?>  
             <div class="card">
-            <h2><a href="displayarticle.php"><?php echo $donnees['titre']; ?></a></h2>
+            <h2><a href='displayarticle.php?id_article=<?php echo $donnees['id_article']?>'><?php echo $donnees['titre']; ?></a></h2>
             <h5><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> - <?php echo $donnees['date_article']; ?></h5> 
             <div><img class="fakeimg" style="height:200px;" src="images/bannersmash.jpg""></div>
             <p class="trailer"><strong><?php echo $donnees['gros_titre']; ?></strong></p>
             </div>
     <?php
     }
-    $reponse->closeCursor();
+
+    } catch (PDOException $e) {
+        echo 'Connexion échouée : ' . $e->getMessage();
+    }
     ?>
     
   </div>
@@ -44,7 +44,7 @@
     <div class="card">
       <?php
         session_start();
-        echo '<h3>'.$_SESSION['Nom'].' '.$_SESSION['Prenom'].'</h3>';
+        echo '<h3>'.$_SESSION['Prenom'].' '.$_SESSION['Nom'].'</h3>';
         echo '<form>';
         echo '<input type="submit" value="Déconnexion" /><br/>';
         echo '</form>';
@@ -60,7 +60,7 @@
       catch(Exception $e) {
           die('Erreur : '.$e->getMessage());
       }
-      $reponse = $bdd->query('SELECT * FROM Account INNER JOIN Comment ON Account.id = Comment.id_compte ORDER BY id_compte DESC');
+      $reponse = $bdd->query('SELECT * FROM Account INNER JOIN Comment ON Account.id = Comment.id_compte ORDER BY date_commentaire DESC');
       while ($donnees = $reponse->fetch())  {
       ?>
         <div class="comment">

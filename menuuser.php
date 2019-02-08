@@ -20,7 +20,7 @@ session_start()
           <button class="cube" onclick="location.href='#'"><p>Supprimer compte</p></button>
           <button class="cube" onclick="location.href='#'"><p> </p></button>
           <button class="cube" onclick="location.href='#'"><p> </p></button>
-          <button class="cube" onclick="location.href='#'"><p>Déconnexion</p></button>
+          <button class="cube" onclick="location.href='newblogtimmy.php'"><p>Déconnexion</p></button>
         </div> 
     </div>
   </body>

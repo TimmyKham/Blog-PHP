@@ -12,6 +12,26 @@ session_start ();
     <div id="container">  
       <form method="post">
         <h1>Création d'un commentaire</h1>
+        <label><b>Article</b></label><br>
+    <select name="numarticle" id="numarticle">
+        <?php
+    try {
+
+        $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy', 'root', 'root'); 
+        $select = $bdd->query("SELECT * FROM Article ORDER BY id_article DESC");
+        while ($donnees = $select->fetch()) {
+    ?>  
+
+        <option value=" <?php echo $donnees['id_article']; ?>"> <?php echo $donnees['titre']; ?></option>
+    
+    <?php
+    }
+
+    } catch (PDOException $e) {
+        echo 'Connexion échouée : ' . $e->getMessage();
+    }
+    ?>
+        </select><br><br>
         <label><b>Commentaire</b></label>
         <input type="text" placeholder="Entrer le commentaire" name="commentaire" required>
         <label><b>Date de l'article</b></label>
@@ -28,9 +48,9 @@ session_start ();
         if(isset($_POST['submit'])){
           $commentaire=$_POST['commentaire'];
           $date_commentaire=$_POST['date_commentaire'];
-
-          $bdd->exec("INSERT INTO Comment (id_compte, commentaire, date_commentaire) 
-                VALUES('12','$commentaire','$date_commentaire')");
+          $numarticle=$_POST['numarticle'];
+          $bdd->exec("INSERT INTO Comment (id_article, id_compte, commentaire, date_commentaire) 
+                VALUES('$numarticle','12','$commentaire','$date_commentaire')");
           header('Location: newblogtimmy.php');
           exit();
         }

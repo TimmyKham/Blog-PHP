@@ -20,8 +20,9 @@
     catch(Exception $e) {
         die('Erreur : '.$e->getMessage());
     }
-    $reponse = $bdd->query('SELECT * FROM Account INNER JOIN Article ON Account.id = Article.id_compte WHERE id_article = 6 ORDER BY id_article DESC');
-    while ($donnees = $reponse->fetch())  {
+    if(isset($_GET['id_article'])) {
+    $reponse = $bdd->query('SELECT * FROM Account INNER JOIN Article ON Account.id = Article.id_compte WHERE id_article ='.$_GET['id_article']);
+      while ($donnees = $reponse->fetch())  {
     ?>  
             <div class="card">
             <h2><?php echo $donnees['titre']; ?></h2>
@@ -31,8 +32,9 @@
             <p><?php echo $donnees['description']; ?></p>
             </div>
     <?php
+      }
     }
-    $reponse->closeCursor();
+      $reponse->closeCursor();
     ?>
     
   </div>
@@ -45,7 +47,7 @@
     catch(Exception $e) {
         die('Erreur : '.$e->getMessage());
     }
-    $reponse = $bdd->query('SELECT * FROM Comment INNER JOIN Account On Comment.id_compte = Account.id ORDER BY id_commentaire DESC');
+    $reponse = $bdd->query('SELECT * FROM Comment INNER JOIN Account On Comment.id_compte = Account.id WHERE id_article ='.$_GET['id_article']);
     while ($donnees = $reponse->fetch())  {
     ?>  
             <div class="card">
