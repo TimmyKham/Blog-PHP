@@ -34,9 +34,9 @@ session_start ();
           $date_article=$_POST['date_article'];
           $gros_titre=$_POST['gros_titre'];
           $description=$_POST['description'];
-
+          $myid=$_GET['id_compte'];
           $bdd->exec("INSERT INTO Article (titre, id_compte, date_article, gros_titre, description) 
-                VALUES('$titre','12','$date_article','$gros_titre','$description')");
+                VALUES('$titre','$myid','$date_article','$gros_titre','$description')");
           header('Location: newblogtimmy.php');
           exit();
         }

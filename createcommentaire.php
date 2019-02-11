@@ -49,8 +49,9 @@ session_start ();
           $commentaire=$_POST['commentaire'];
           $date_commentaire=$_POST['date_commentaire'];
           $numarticle=$_POST['numarticle'];
+          $myid=$_GET['id_compte'];
           $bdd->exec("INSERT INTO Comment (id_article, id_compte, commentaire, date_commentaire) 
-                VALUES('$numarticle','12','$commentaire','$date_commentaire')");
+                VALUES('$numarticle','$myid','$commentaire','$date_commentaire')");
           header('Location: newblogtimmy.php');
           exit();
         }
