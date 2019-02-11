@@ -13,6 +13,7 @@
   <nav class="card">
     <ul>
      <li><a class="nav" href="#">Accueil</a></li>
+     <li><a class="nav" href="connexion.php">Menu</a></li>
      <li><a class="nav" href="createaccount.php">Crée un compte</a></li>
      <li><a class="nav" href="connexion.php">Connexion</a></li>
     </ul>
@@ -44,9 +45,9 @@
     <div class="card">
       <?php
         session_start();
-        echo '<h3>'.$_SESSION['Prenom'].' '.$_SESSION['Nom'].'</h3>';
+        echo '<h2>'.$_SESSION['Prenom'].' '.$_SESSION['Nom'].'</h2>';
         echo '<form>';
-        echo '<input type="submit" value="Déconnexion" /><br/>';
+        echo '<a href="deconnexion.php">Déconnexion</a><br/>';
         echo '</form>';
       ?>
     </div>
