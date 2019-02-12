@@ -27,7 +27,7 @@
             <div class="card">
             <h2><?php echo $donnees['titre']; ?></h2>
             <h5><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> - <?php echo $donnees['date_article']; ?></h5> 
-            <div><img class="fakeimg" src="images/bannersmash.jpg""></div>
+            <div><img class="fakeimg" src="<?php echo $donnees['link_image']; ?>" onclick="location.href='displayarticle.php?id_article=<?php echo $donnees['id_article']?>'"></div>
             <p class="trailer"><strong><?php echo $donnees['gros_titre']; ?></strong></p>
             <p><?php echo $donnees['description']; ?></p>
             </div>

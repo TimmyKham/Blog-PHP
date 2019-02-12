@@ -4,11 +4,12 @@
       if(isset($_GET['id_article'])) {
         $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy', 'root', 'root');
         $id_article = htmlentities($bdd->quote($_GET['id_article']));
-        $edit = $bdd->prepare("UPDATE Article SET titre = :titre, gros_titre = :gros_titre, description = :description WHERE id_article = :id_article");
+        $edit = $bdd->prepare("UPDATE Article SET titre = :titre, gros_titre = :gros_titre, description = :description, link_image = :link_image WHERE id_article = :id_article");
         $edit->execute(array(
             'titre' => $titre,
             'gros_titre' => $gros_titre,
             'description' => $description,
+            'link_image' => $link_image,
             'id_article' => $_GET['id_article']));
           if ($edit) {
             echo '<h1 style="color:white;">Modification effectué</h1>';
@@ -36,6 +37,8 @@
       <input type="text" name="gros_titre" placeholder='Modifier le gros titre'>
       <label><b>Description</b></label>
       <input type="text" name="description" placeholder='Modifier la description'>
+      <label><b>Image</b></label>
+      <input type="text" name="link_image" placeholder='Modifier image'>
       <input type="submit" name="submit" value="Modifier">
       <a href="modifyarticle.php">Menu précédent</a><br>
       <a href="newblogtimmy.php">Menu principal</a>

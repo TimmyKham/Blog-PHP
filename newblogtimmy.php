@@ -13,9 +13,9 @@
   <nav class="card">
     <ul>
      <li><a class="nav" href="#">Accueil</a></li>
-     <li><a class="nav" href="connexion.php">Menu</a></li>
      <li><a class="nav" href="createaccount.php">Crée un compte</a></li>
      <li><a class="nav" href="connexion.php">Connexion</a></li>
+     <li><a class="nav" href="connexion.php">Menu</a></li>
     </ul>
   </nav>
   <div class="leftcolumn">
@@ -29,7 +29,7 @@
             <div class="card">
             <h2><a href='displayarticle.php?id_article=<?php echo $donnees['id_article']?>'><?php echo $donnees['titre']; ?></a></h2>
             <h5><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> - <?php echo $donnees['date_article']; ?></h5> 
-            <div><img class="fakeimg" style="height:200px;" src="images/bannersmash.jpg"></div>
+            <div><img class="fakeimg" src="<?php echo $donnees['link_image']; ?>" onclick="location.href='displayarticle.php?id_article=<?php echo $donnees['id_article']?>'"></div>
             <p class="trailer">"<strong><?php echo $donnees['gros_titre']; ?></strong>"</p>
             </div>
     <?php
@@ -45,6 +45,7 @@
     <div class="card">
       <?php
         session_start();
+        echo '<h3>Bonjour,</h3>';
         echo '<h2>'.$_SESSION['Prenom'].' '.$_SESSION['Nom'].'</h2>';
         echo '<form>';
         echo '<a href="deconnexion.php">Déconnexion</a><br/>';

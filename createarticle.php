@@ -20,6 +20,8 @@ session_start ();
         <input type="text" placeholder="Entrer un titre aguicheur" name="gros_titre" required>
         <label><b>Description</b></label>
         <input type="text" placeholder="Description de l'article" name="description" required>
+        <label><b>Image</b></label>
+        <input type="text" placeholder="Entrer le lien de l'image" name="link_image" required>
         <input type="submit" name="submit" value="Création de l'article">
       </form>
     </div>
@@ -34,9 +36,10 @@ session_start ();
           $date_article=$_POST['date_article'];
           $gros_titre=$_POST['gros_titre'];
           $description=$_POST['description'];
+          $link_image=$_POST['link_image'];
           $myid=$_GET['id_compte'];
-          $bdd->exec("INSERT INTO Article (titre, id_compte, date_article, gros_titre, description) 
-                VALUES('$titre','$myid','$date_article','$gros_titre','$description')");
+          $bdd->exec("INSERT INTO Article (titre, id_compte, date_article, gros_titre, description, link_image) 
+                VALUES('$titre','$myid','$date_article','$gros_titre','$description','$link_image')");
           header('Location: newblogtimmy.php');
           exit();
         }
