@@ -21,7 +21,7 @@ session_start ();
         <label><b>Description</b></label>
         <input type="text" placeholder="Description de l'article" name="description" required>
         <label><b>Image</b></label>
-        <input type="text" placeholder="Entrer le lien de l'image" name="link_image" required>
+        <input type="text" placeholder="Entrer le lien de votre l'image" name="link_image" required>
         <input type="submit" name="submit" value="Création de l'article">
       </form>
     </div>

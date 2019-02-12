@@ -11,6 +11,7 @@
      <li><a class="nav" href="newblogtimmy.php">Accueil</a></li>
      <li><a class="nav" href="createaccount.php">Crée un compte</a></li>
      <li><a class="nav" href="connexion.php">Connexion</a></li>
+     <li><a class="nav" href="connexion.php">Menu</a></li>
     </ul>
   </nav>
     <?php

@@ -21,7 +21,7 @@ session_start ();
 
         while ($tabArticle = $select->fetch()) {
 
-          echo "<table>"."<td>".$tabArticle['id_article']."</td>"."<td>".$tabArticle['titre']."</td>"."<td>".$tabArticle['date_article']."</td>"."<td>".$tabArticle['gros_titre']."</td>"."<td>".$tabArticle['description']."</td>"."<td><a href='editarticle.php?id_article=".$tabArticle['id_article']."'>Modifier </a></td>"."<td><a href='supparticle.php?id_article=".$tabArticle['id_article']."'>Supprimer</a></td><br></table>";
+          echo "<table>"."<td>".$tabArticle['id_article']."</td>"."<td>".$tabArticle['titre']."</td>"."<td>".$tabArticle['date_article']."</td>"."<td>".$tabArticle['gros_titre']."</td>"."<td>".$tabArticle['description']."</td>"."<td>".$tabArticle['link_image']."</td>"."<td><a href='editarticle.php?id_article=".$tabArticle['id_article']."'>Modifier </a></td>"."<td><a href='supparticle.php?id_article=".$tabArticle['id_article']."'>Supprimer</a></td><br></table>";
         }
 
     } catch (PDOException $e) {

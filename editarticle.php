@@ -38,7 +38,7 @@
       <label><b>Description</b></label>
       <input type="text" name="description" placeholder='Modifier la description'>
       <label><b>Image</b></label>
-      <input type="text" name="link_image" placeholder='Modifier image'>
+      <input type="text" name="link_image" placeholder='Modifier le lien image'>
       <input type="submit" name="submit" value="Modifier">
       <a href="modifyarticle.php">Menu précédent</a><br>
       <a href="newblogtimmy.php">Menu principal</a>
