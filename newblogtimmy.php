@@ -67,7 +67,7 @@
       ?>
         <div class="comment">
         <p><strong><?php echo $donnees['commentaire']; ?></strong></p>
-        <p><strong><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> </strong>- <?php echo $donnees['date_commentaire']; ?></p>
+        <p><strong><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> </strong> à <?php echo $donnees['date_commentaire']; ?></p>
       </div><br>
     <?php
     }

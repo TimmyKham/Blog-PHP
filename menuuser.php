@@ -13,7 +13,7 @@ session_start()
     <div id="container"> 
       <h1>Session Utilisateur</h1>
         <div class="big-cube">
-          <button class="cube" onclick="location.href='gestion.php'"><p>Mon Profil</p></button>
+          <button class="cube" onclick="location.href='modifyuser.php?id_compte=<?php echo $_GET['id'] ?>'"><p>Mon Profil</p></button>
           <button class="cube" onclick="location.href='#'"><p>Mes Commentaires</p></button>
           <button class="cube" onclick="location.href='createcommentaire.php?id_compte=<?php echo $_GET['id'] ?>'"><p>Ajouter Commentaire</p></button>
           <button class="cube" onclick="location.href='#'"><p>Modifier Commentaire</p></button>

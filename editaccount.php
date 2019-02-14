@@ -10,7 +10,7 @@
             'Prenom' => $Prenom,
             'DateNaissance' => $DateNaissance,
             'Email' => $Email,
-            'MotDePasse' => $MotDePasse,
+            'MotDePasse' => sha1($MotDePasse),
             'id' => $_GET['id']));
           if ($edit) {
             echo '<h1 style="color:white;">Modification effectué</h1>';
@@ -31,20 +31,29 @@
 <body background="images/blurblogtimmy.jpg">
   <div id="container">  
     <form method="post">
+      <?php
+      $mysqli = new mysqli('localhost', 'root', 'root', 'blogtimmy');
+      $requete = 'SELECT * FROM Account WHERE id='.$_GET['id'];
+      $resultat = $mysqli->query($requete);
+    while ($donnees = $resultat->fetch_assoc()) {
+    ?>
       <h1>Editer un compte</h1>
       <label><b>Nom</b></label>
-        <input type="text" placeholder="Entrer votre Nom" name="Nom">
+        <input type="text" value="<?php echo $donnees['Nom']; ?>" name="Nom">
         <label><b>Prenom</b></label>
-        <input type="text" placeholder="Entrer votre Prenom" name="Prenom">
+        <input type="text" value="<?php echo $donnees['Prenom']; ?>" name="Prenom">
         <label><b>Date de naissance</b></label>
-        <input type="date" name="DateNaissance">
+        <input type="date" name="DateNaissance" required>
         <label><b>E-mail</b></label>
-        <input type="email" placeholder="votre@email.fr" name="Email">
+        <input type="email" value="<?php echo $donnees['Email']; ?>" name="Email">
         <label><b>Mot de Passe</b></label>
-        <input type="password" placeholder="********" name="MotDePasse">
-        <input type="submit" name="submit" value="Création du compte">
-      <a href="modifyaccount.php">Menu précédent</a><br>
+        <input type="password" value="<?php echo $donnees['MotDePasse']; ?>" name="MotDePasse">
+        <input type="submit" name="submit" value="Editer le compte">
       <a href="newblogtimmy.php">Menu principal</a>
+      <?php
+}
+$mysqli->close();
+?>
     </form>
   <div>  
 </body>

@@ -29,9 +29,18 @@
     <form method="post">
       <h1>Editer un commentaire</h1>
       <label><b>Commentaire</b></label>
-      <input type="text" name="commentaire" placeholder='Modifier votre commentaire'required >
+    <?php
+      $mysqli = new mysqli('localhost', 'root', 'root', 'blogtimmy');
+      $requete = 'SELECT commentaire FROM Comment WHERE id_commentaire='.$_GET['id_commentaire'];
+      $resultat = $mysqli->query($requete);
+    while ($donnees = $resultat->fetch_assoc()) {
+    ?>
+      <input type="text" name="commentaire" value="<?php echo $donnees['commentaire']; ?>" required >
+      <?php
+}
+$mysqli->close();
+?>
       <input type="submit" name="submit" value="Modifier">
-      <a href="modifycommentaire.php">Menu précédent</a><br>
       <a href="newblogtimmy.php">Menu principal</a>
     </form>
   <div>  
