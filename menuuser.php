@@ -14,10 +14,10 @@ session_start()
       <h1>Session Utilisateur</h1>
         <div class="big-cube">
           <button class="cube" onclick="location.href='modifyuser.php?id_compte=<?php echo $_GET['id'] ?>'"><p>Mon Profil</p></button>
-          <button class="cube" onclick="location.href='#'"><p>Mes Commentaires</p></button>
+          <button class="cube" onclick="location.href='gestion.php?id=<?php echo $_GET['id'] ?>'"><p>Mes Commentaires</p></button>
           <button class="cube" onclick="location.href='createcommentaire.php?id_compte=<?php echo $_GET['id'] ?>'"><p>Ajouter Commentaire</p></button>
           <button class="cube" onclick="location.href='#'"><p>Modifier Commentaire</p></button>
-          <button class="cube" onclick="location.href='#'"><p>Supprimer compte</p></button>
+          <button class="cube" onclick="location.href='suppaccount.php?id=<?php echo $_GET['id'] ?>'"><p>Supprimer compte</p></button>
           <button class="cube" onclick="location.href='#'"><p> </p></button>
           <button class="cube" onclick="location.href='#'"><p> </p></button>
           <button class="cube" onclick="location.href='newblogtimmy.php'"><p>Accueil</p></button>

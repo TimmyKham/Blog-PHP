@@ -39,8 +39,7 @@
     ?>
     
   </div>
-  <h2 style="color: white">Commentaire</h2>
- 
+  <h2 style="color: white">Les commentaires<a style="color: white; margin-left: 64.5%;" href="connexion.php">Ajouter un commentaire</a></h2>
 <?php
     try {
         $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy;charset=utf8', 'root', 'root');

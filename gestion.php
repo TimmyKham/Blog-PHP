@@ -27,7 +27,7 @@ $(document).ready(function(){
  function load_data(query)
  {
   $.ajax({
-   url:"js/fetch.php",
+   url:"fetch.php",
    method:"POST",
    data:{query:query},
    success:function(data)

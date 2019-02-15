@@ -12,5 +12,4 @@
           }
       }
 ?>
-<a href="modifyaccount.php">Menu précédent</a>
 <br><a href="newblogtimmy.php">Menu principal</a>

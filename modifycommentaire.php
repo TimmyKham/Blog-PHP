@@ -19,7 +19,7 @@ session_start ();
         $select = $bdd->query("SELECT * FROM Comment");
         while ($tabCom = $select->fetch()) {
 
-          echo "id : "."<b>".$tabCom[0]."</b>"." Commentaire :"."<b>".$tabCom[2]."</b>"." Date : "."<b>".$tabCom[3]."</b>"."<a href='editcommentaire.php?id_commentaire=".$tabCom[1]."'>Modifier </a>"."<a href='suppcommentaire.php?id_commentaire=".$tabCom[1]."'>Supprimer</a><br>";
+          echo "<input type=checkbox>"."id : "."<b>".$tabCom[0]."</b>"." Commentaire :"."<b>".$tabCom[3]."</b>"."</b>"."<a href='editcommentaire.php?id_commentaire=".$tabCom[1]."'>Modifier </a>"."<a href='suppcommentaire.php?id_commentaire=".$tabCom[1]."'>Supprimer</a><br>";
         }
 
     } catch (PDOException $e) {

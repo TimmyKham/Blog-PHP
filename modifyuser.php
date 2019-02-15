@@ -20,7 +20,7 @@ session_start ();
         $select = $bdd->query("SELECT * FROM Account WHERE id=".$_GET['id_compte']);
         while ($tabAccount = $select->fetch()) {
 
-          echo " Nom :"."<b>".$tabAccount[1]."</b>"." Prenom : "."<b>".$tabAccount[2]."</b>"." Date de naissance :"."<b>".$tabAccount[3]."</b>"." Email :"."<b>".$tabAccount[4]."</b>"." Mot de passe : "."<b>*******</b>"."<a href='editaccount.php?id=".$tabAccount[0]."'>Modifier</a>"."<a href='suppaccount.php?id=".$tabAccount[0]."'>Supprimer mon compte</a><br>";
+          echo " Nom :"."<b>".$tabAccount[1]."</b>"." Prenom : "."<b>".$tabAccount[2]."</b>"." Date de naissance :"."<b>".$tabAccount[3]."</b>"." Email :"."<b>".$tabAccount[4]."</b>"." Mot de passe : "."<b>************</b>"."<a href='editaccount.php?id=".$tabAccount[0]."'>Modifier</a>"."<a href='suppaccount.php?id=".$tabAccount[0]."'>Supprimer mon compte</a><br>";
         }
 
     } catch (PDOException $e) {
