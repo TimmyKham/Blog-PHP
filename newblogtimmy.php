@@ -16,6 +16,14 @@
      <li><a class="nav" href="createaccount.php">Crée un compte</a></li>
      <li><a class="nav" href="connexion.php">Connexion</a></li>
      <li><a class="nav" href="connexion.php">Menu</a></li>
+     <li><a class="nav">
+      <select name="categorie">
+        <option value="newblogtimmy.php">Catégories</option>
+        <option value="newblogtimmy.php?id_categorie=">Voiture</option>
+        <option value="newblogtimmy.php?id_categorie=">Art</option>
+        <option value="newblogtimmy.php?id_categorie=">Jeux</option>
+      </select>
+    </a></li>
     </ul>
   </nav>
   <div class="leftcolumn">

@@ -13,12 +13,12 @@ session_start()
     <div id="container"> 
       <h1>Session Administrateur</h1>
         <div class="big-cube">
-          <button class="cube" onclick="location.href='gestion.php'"><p>Profil</p></button>
+          <button class="cube" onclick="location.href='gestion.php'"><p>Les Profils</p></button>
+          <button class="cube" onclick="location.href='gestion.php'"><p>Les articles</p></button>
           <button class="cube" onclick="location.href='createarticle.php?id_compte=<?php echo $_GET['id'] ?>'"><p>Créer un Article</p></button>
-          <button class="cube" onclick="location.href='modifyarticle.php'"><p>Modifier un Article</p></button>
           <button class="cube" onclick="location.href='createcommentaire.php?id_compte=<?php echo $_GET['id'] ?>'"><p>Créer Commentaire</p></button>
-          <button class="cube" onclick="location.href='modifycommentaire.php'"><p>Modifier Comment </p></button>
-          <button class="cube" onclick="location.href='createaccount.php'"><p>Créer un compte</p></button>
+          <button class="cube" onclick="location.href='modifyarticle.php'"><p>Modifier un Article</p></button>
+          <button class="cube" onclick="location.href='modifycommentaireadmin.php'"><p>Modifier Comment </p></button>
           <button class="cube" onclick="location.href='modifyaccount.php'"><p>Modifier un compte</p></button>
           <button class="cube" onclick="location.href='newblogtimmy.php'"><p>Accueil</p></button>
         </div> 

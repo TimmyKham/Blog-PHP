@@ -16,7 +16,7 @@ session_start ();
   <?php
     try {
         $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy', 'root', 'root'); 
-        $select = $bdd->query("SELECT * FROM Comment where id_compte =" .$_GET['id_compte']);
+        $select = $bdd->query("SELECT * FROM Comment");
         while ($tabCom = $select->fetch()) {
 
           echo "<input type=checkbox>"."id : "."<b>".$tabCom[0]."</b>"." Commentaire :"."<b>".$tabCom[3]."</b>"."</b>"."<a href='editcommentaire.php?id_commentaire=".$tabCom[1]."'>Modifier </a>"."<a href='suppcommentaire.php?id_commentaire=".$tabCom[1]."'>Supprimer</a><br>";
