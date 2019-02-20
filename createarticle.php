@@ -12,8 +12,29 @@ session_start ();
     <div id="container">  
       <form method="post">
         <h1>Création d'un article</h1>
+        
         <label><b>Titre</b></label>
         <input type="text" placeholder="Entrer le titre" name="titre" required>
+        <label><b>Catégorie</b></label><br><br>
+        <select name="id_cat" id="id_cat">
+        <?php
+    try {
+
+        $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy', 'root', 'root'); 
+        $select = $bdd->query("SELECT * FROM Category ORDER BY idCategory ASC");
+        while ($donnees = $select->fetch()) {
+    ?>  
+
+        <option value=" <?php echo $donnees['idCategory']; ?>"> <?php echo $donnees['typeCat']; ?>
+        </option>
+    
+    <?php
+    }
+
+    } catch (PDOException $e) {
+        echo 'Connexion échouée : ' . $e->getMessage();
+    }
+    ?></select><br><br>
         <label><b>Date de l'article</b></label>
         <input type="date" name="date_article" required>
         <label><b>Titre aguicheur</b></label>
@@ -33,13 +54,14 @@ session_start ();
 
         if(isset($_POST['submit'])){
           $titre=$_POST['titre'];
+          $id_cat=$_POST['id_cat'];
           $date_article=$_POST['date_article'];
           $gros_titre=$_POST['gros_titre'];
           $description=$_POST['description'];
           $link_image=$_POST['link_image'];
           $myid=$_GET['id_compte'];
-          $bdd->exec("INSERT INTO Article (titre, id_compte, date_article, gros_titre, description, link_image) 
-                VALUES('$titre','$myid','$date_article','$gros_titre','$description','$link_image')");
+          $bdd->exec("INSERT INTO Article (titre, id_compte, date_article, gros_titre, description, link_image, id_cat) 
+                VALUES('$titre','$myid','$date_article','$gros_titre','$description','$link_image','$id_cat')");
           header('Location: newblogtimmy.php');
           exit();
         }

@@ -14,7 +14,7 @@ session_start()
       <h1>Session Administrateur</h1>
         <div class="big-cube">
           <button class="cube" onclick="location.href='gestion.php'"><p>Les Profils</p></button>
-          <button class="cube" onclick="location.href='gestion.php'"><p>Les articles</p></button>
+          <button class="cube" onclick="location.href='gestion_article.php'"><p>Les articles</p></button>
           <button class="cube" onclick="location.href='createarticle.php?id_compte=<?php echo $_GET['id'] ?>'"><p>Créer un Article</p></button>
           <button class="cube" onclick="location.href='createcommentaire.php?id_compte=<?php echo $_GET['id'] ?>'"><p>Créer Commentaire</p></button>
           <button class="cube" onclick="location.href='modifyarticle.php'"><p>Modifier un Article</p></button>

@@ -1,13 +1,13 @@
 <html>
  <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Gestion Article</title>
+  <title>Gestion Commentaire</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/gestion.css">
  </head>
  <body background="images/blurblogtimmy.jpg">
   <div class="container"><br/>
-    <h1 align="center">Articles</h1><br />
+    <h1 align="center">Mes Commentaires</h1><br />
       <div class="form-group">
         <div class="input-group">
             <input type="text" name="search_text" id="search_text" placeholder="Effectuez une recherche" class="form-control" />
@@ -27,7 +27,7 @@ $(document).ready(function(){
  function load_data(query)
  {
   $.ajax({
-   url:"fetch_article.php",
+   url:"fetch_comment.php",
    method:"POST",
    data:{query:query},
    success:function(data)

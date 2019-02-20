@@ -6,23 +6,35 @@
 </head>
 <body background="images/blurblogtimmy.jpg">
 <div class="header">
-  <img style="width: 100%;" src="images/video-games-banner.jpg">
+  <img style="width: 100%;" src="images/timmyblog.png">
 </div>
 
 <div class="row">
   <nav class="card">
     <ul>
-     <li><a class="nav" href="#">Accueil</a></li>
+     <li><a class="nav" href="newblogtimmy.php">Accueil</a></li>
      <li><a class="nav" href="createaccount.php">Crée un compte</a></li>
      <li><a class="nav" href="connexion.php">Connexion</a></li>
      <li><a class="nav" href="connexion.php">Menu</a></li>
-     <li><a class="nav">
-      <select name="categorie">
-        <option value="newblogtimmy.php">Catégories</option>
-        <option value="newblogtimmy.php?id_categorie=">Voiture</option>
-        <option value="newblogtimmy.php?id_categorie=">Art</option>
-        <option value="newblogtimmy.php?id_categorie=">Jeux</option>
-      </select>
+     <li><a class="nav"><select name="id_cat" id="id_cat">
+        <?php
+    try {
+
+        $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy', 'root', 'root'); 
+        $select = $bdd->query("SELECT * FROM Category ORDER BY idCategory ASC");
+        while ($donnees = $select->fetch()) {
+    ?>  
+
+        <option value=" <?php echo $donnees['idCategory']; ?>"> <?php echo $donnees['typeCat']; ?>
+        </option>
+    
+    <?php
+    }
+
+    } catch (PDOException $e) {
+        echo 'Connexion échouée : ' . $e->getMessage();
+    }
+    ?></select>
     </a></li>
     </ul>
   </nav>
@@ -31,11 +43,12 @@
     try {
 
         $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy', 'root', 'root');
-        $select = $bdd->query("SELECT * FROM Account INNER JOIN Article ON Account.id = Article.id_compte ORDER BY id_article DESC");
+        $select = $bdd->query("SELECT * FROM Account INNER JOIN Article ON Account.id = Article.id_compte INNER JOIN Category 
+                            ON Article.id_cat = Category.idCategory ORDER BY id_article DESC");
         while ($donnees = $select->fetch()) {
     ?>  
             <div class="card">
-            <h2><a href='displayarticle.php?id_article=<?php echo $donnees['id_article']?>'><?php echo $donnees['titre']; ?></a></h2>
+            <h2><a href='displayarticle.php?id_article=<?php echo $donnees['id_article']?>'><?php echo $donnees['titre']; ?></a> - <strong style="color: orange"><?php echo $donnees['typeCat']; ?></strong></h2>
             <h5><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> - <?php echo $donnees['date_article']; ?></h5> 
             <div><img class="fakeimg" src="<?php echo $donnees['link_image']; ?>" onclick="location.href='displayarticle.php?id_article=<?php echo $donnees['id_article']?>'"></div>
             <p class="trailer">"<strong><?php echo $donnees['gros_titre']; ?></strong>"</p>

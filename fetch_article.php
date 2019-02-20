@@ -6,16 +6,15 @@ if(isset($_POST["query"]))
 {
  $search = mysqli_real_escape_string($connect, $_POST["query"]);
  $query = "
-  SELECT * FROM Account INNER JOIN Comment ON Account.id = Comment.id_compte 
-  WHERE commentaire LIKE '%".$search."%'
-  OR date_commentaire LIKE '%".$search."%'
-  OR Nom LIKE '%".$search."%'
-  OR Prenom LIKE '%".$search."%'
+  SELECT * FROM Article INNER JOIN Category ON Article.id_cat = Category.idCategory
+  WHERE titre LIKE '%".$search."%'
+  OR date_article LIKE '%".$search."%'
+  OR typeCat LIKE '%".$search."%'
    ";
 }
 else
 {
- $query = "SELECT * FROM Account INNER JOIN Comment ON Account.id = Comment.id_compte ";
+ $query = "SELECT * FROM Article INNER JOIN Category ON Article.id_cat = Category.idCategory";
 }
 $result = mysqli_query($connect, $query);
 if(mysqli_num_rows($result) > 0)
@@ -23,20 +22,18 @@ if(mysqli_num_rows($result) > 0)
  $output .= '
  
     <tr>
-     <th>Nom</th>
-     <th>Prenom</th>
-     <th>Commentaires</th>
-     <th>Dates de publication</th>
+     <th>Articles</th>
+     <th>Publication</th>
+     <th>Categories</th>
     </tr>
  ';
  while($row = mysqli_fetch_array($result))
  {
   $output .= '
    <tr>
-    <td>'.$row["Nom"].'</td>
-    <td>'.$row["Prenom"].'</td>
-    <td>'.$row["commentaire"].'</td>
-    <td>'.$row["date_commentaire"].'</td>
+    <td>'.$row["titre"].'</td>
+    <td>'.$row["date_article"].'</td>
+    <td>'.$row["typeCat"].'</td>
    </tr>
   ';
  }
