@@ -23,10 +23,23 @@ session_start ();
           echo " Nom :"."<b>".$tabAccount[1]."</b>"." Prenom : "."<b>".$tabAccount[2]."</b>"." Date de naissance :"."<b>".$tabAccount[3]."</b>"." Email :"."<b>".$tabAccount[4]."</b>"." Mot de passe : "."<b>************</b>"."<a href='editaccount.php?id=".$tabAccount[0]."'>Modifier</a>"."<a href='suppaccount.php?id=".$tabAccount[0]."'>Supprimer mon compte</a><br>";
         }
 
+        
+
     } catch (PDOException $e) {
         echo 'Connexion échouée : ' . $e->getMessage();
     }
-    
+?> 
+<?php
+    try {
+        $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy', 'root', 'root'); 
+        $select = $bdd->query("SELECT id_compte, count(id_compte) FROM Comment WHERE id_compte =".$_GET['id_compte']);
+        while ($NbrComment = $select->fetch()) {
+
+          echo "<br>Nombre de commentaires :"."<b>".$NbrComment[1]."</b><br>";
+        }
+      }catch (PDOException $e) {
+        echo 'Connexion échouée : ' . $e->getMessage();
+    }
   ?> 
   <br><a href="newblogtimmy.php">Menu principal</a>
     </div>
