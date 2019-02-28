@@ -6,4 +6,4 @@
 
 ## How to use ?
 
-* `localhost` - start website
+* `localhost/newblogtimmy.php` - start website
