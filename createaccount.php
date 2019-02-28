@@ -13,15 +13,17 @@ session_start ();
       <form method="post">
         <h1>Création</h1>
         <label><b>Nom</b></label>
-        <input type="text" placeholder="Entrer votre Nom" name="Nom" required>
+        <input type="text" placeholder="Entrez votre Nom" name="Nom" required>
         <label><b>Prenom</b></label>
-        <input type="text" placeholder="Entrer votre Prenom" name="Prenom" required>
+        <input type="text" placeholder="Entrez votre Prenom" name="Prenom" required>
         <label><b>Date de naissance</b></label>
         <input type="date" name="DateNaissance" required>
         <label><b>E-mail</b></label>
         <input type="email" placeholder="votre@email.fr" name="Email" required>
         <label><b>Mot de Passe</b></label>
         <input type="password" placeholder="********" name="MotDePasse" required>
+        <label><b>Image de profil</b></label>
+        <input type="text" placeholder="Entrez le lien de votre image" name="ImageProfil" required>
         <input type="submit" name="submit" value="Création du compte">
       </form>
     </div>
@@ -37,9 +39,9 @@ session_start ();
           $DateNaissance=$_POST['DateNaissance'];
           $Email=$_POST['Email'];
           $MotDePasse=sha1($_POST['MotDePasse']);
-
-          $bdd->exec("INSERT INTO Account(Nom, Prenom, DateNaissance, Email, MotDePasse, Profil) 
-                VALUES('$Nom','$Prenom','$DateNaissance','$Email','$MotDePasse','User')");
+          $ImageProfil=$_POST['ImageProfil'];
+          $bdd->exec("INSERT INTO Account(Nom, Prenom, DateNaissance, Email, MotDePasse, Profil, ImageProfil) 
+                VALUES('$Nom','$Prenom','$DateNaissance','$Email','$MotDePasse','User','$ImageProfil')");
           header('Location: connexion.php');
           exit();
         }

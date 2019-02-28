@@ -4,13 +4,14 @@
       if(isset($_GET['id'])) {
         $bdd = new PDO('mysql:host=localhost;dbname=blogtimmy', 'root', 'root');
         $id = htmlentities($bdd->quote($_GET['id']));
-        $edit = $bdd->prepare("UPDATE Account SET Nom = :Nom, Prenom= :Prenom, DateNaissance = :DateNaissance, Email = :Email, MotDePasse = :MotDePasse WHERE id = :id");
+        $edit = $bdd->prepare("UPDATE Account SET Nom = :Nom, Prenom= :Prenom, DateNaissance = :DateNaissance, Email = :Email, MotDePasse = :MotDePasse, ImageProfil = :ImageProfil WHERE id = :id");
         $edit->execute(array(
             'Nom' => $Nom,
             'Prenom' => $Prenom,
             'DateNaissance' => $DateNaissance,
             'Email' => $Email,
             'MotDePasse' => sha1($MotDePasse),
+            'ImageProfil' => $ImageProfil,
             'id' => $_GET['id']));
           if ($edit) {
             echo '<h1 style="color:white;">Modification effectué</h1>';
@@ -48,6 +49,8 @@
         <input type="email" value="<?php echo $donnees['Email']; ?>" name="Email">
         <label><b>Mot de Passe</b></label>
         <input type="password" value="<?php echo $donnees['MotDePasse']; ?>" name="MotDePasse">
+        <label><b>Image de Profil</b></label>
+        <input type="text" value="<?php echo $donnees['ImageProfil']; ?>" name="ImageProfil">
         <input type="submit" name="submit" value="Editer le compte">
       <a href="newblogtimmy.php">Menu principal</a>
       <?php

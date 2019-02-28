@@ -34,6 +34,7 @@
                           $_SESSION['Profil'] = $result['Profil'];
                           $_SESSION['Nom'] = $result['Nom'];
                           $_SESSION['Prenom'] = $result['Prenom'];
+                          $_SESSION['ImageProfil'] = $result['ImageProfil'];
                           header('Location: menuadmin.php?id='.$result[0]);
 
                         }
@@ -43,6 +44,7 @@
                           $_SESSION['Profil'] = $result['Profil'];
                           $_SESSION['Nom'] = $result['Nom'];
                           $_SESSION['Prenom'] = $result['Prenom'];
+                          $_SESSION['ImageProfil'] = $result['ImageProfil'];
                           header('Location: menuuser.php?id='.$result[0]);
                         }
                     }

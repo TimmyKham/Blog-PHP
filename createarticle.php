@@ -35,8 +35,8 @@ session_start ();
         echo 'Connexion échouée : ' . $e->getMessage();
     }
     ?></select><br><br>
-        <label><b>Date de l'article</b></label>
-        <input type="date" name="date_article" required>
+        <!--<label><b>Date de l'article</b></label>-->
+        <!--<input type="date" name="date_article" required>-->
         <label><b>Titre aguicheur</b></label>
         <input type="text" placeholder="Entrer un titre aguicheur" name="gros_titre" required>
         <label><b>Description</b></label>
@@ -55,13 +55,12 @@ session_start ();
         if(isset($_POST['submit'])){
           $titre=$_POST['titre'];
           $id_cat=$_POST['id_cat'];
-          $date_article=$_POST['date_article'];
           $gros_titre=$_POST['gros_titre'];
           $description=$_POST['description'];
           $link_image=$_POST['link_image'];
           $myid=$_GET['id_compte'];
           $bdd->exec("INSERT INTO Article (titre, id_compte, date_article, gros_titre, description, link_image, id_cat) 
-                VALUES('$titre','$myid','$date_article','$gros_titre','$description','$link_image','$id_cat')");
+                VALUES('$titre','$myid',NOW(),'$gros_titre','$description','$link_image','$id_cat')");
           header('Location: newblogtimmy.php');
           exit();
         }

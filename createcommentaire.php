@@ -34,8 +34,6 @@ session_start ();
         </select><br><br>
         <label><b>Commentaire</b></label>
         <input type="text" placeholder="Entrer le commentaire" name="commentaire" required>
-        <label><b>Date de l'article</b></label>
-        <input type="date" name="date_commentaire" required>
         <input type="submit" name="submit" value="Envoyer le commentaire">
       </form>
     </div>
@@ -47,11 +45,10 @@ session_start ();
 
         if(isset($_POST['submit'])){
           $commentaire=$_POST['commentaire'];
-          $date_commentaire=$_POST['date_commentaire'];
           $numarticle=$_POST['numarticle'];
           $myid=$_GET['id_compte'];
           $bdd->exec("INSERT INTO Comment (id_article, id_compte, commentaire, date_commentaire) 
-                VALUES('$numarticle','$myid','$commentaire','$date_commentaire')");
+                VALUES('$numarticle','$myid','$commentaire',NOW())");
           header('Location: newblogtimmy.php');
           exit();
         }

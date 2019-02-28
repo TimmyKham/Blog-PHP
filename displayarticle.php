@@ -71,6 +71,7 @@
     while ($donnees = $reponse->fetch())  {
     ?>  
             <div class="card">
+            <img width="70" height="70" src="<?php echo $donnees['ImageProfil']; ?>">
             <h2><?php echo $donnees['commentaire']; ?></h2>
             <h5><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> - <?php echo $donnees['date_commentaire']; ?></h5>
             </div>

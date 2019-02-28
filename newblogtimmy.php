@@ -6,7 +6,7 @@
 </head>
 <body background="images/blurblogtimmy.jpg">
 <div class="header">
-  <img style="width: 100%;" src="images/timmyblog.png">
+  <img style="width: 100%;" src="http://blackwirefrs.com/wp-content/themes/capitalx/capitalx/assets/images/news_banner.jpg">
 </div>
 
 <div class="row">
@@ -66,8 +66,8 @@
     <div class="card">
       <?php
         session_start();
-        echo '<h3>Bonjour,</h3>';
-        echo '<h2>'.$_SESSION['Prenom'].' '.$_SESSION['Nom'].'</h2>';
+        echo '<img width="150" height="150" src="'.$_SESSION['ImageProfil'].'">';
+        echo '<h3>'.$_SESSION['Prenom'].' '.$_SESSION['Nom'].'</h3>';
         echo '<form>';
         echo '<a href="deconnexion.php">Déconnexion</a><br/>';
         echo '</form>';
@@ -87,9 +87,10 @@
       while ($donnees = $reponse->fetch())  {
       ?>
         <div class="comment">
-        <p><strong><?php echo $donnees['commentaire']; ?></strong></p>
-        <p><strong><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> </strong> à <?php echo $donnees['date_commentaire']; ?></p>
-      </div><br>
+            <img width="50" height="50" src="<?php echo $donnees['ImageProfil']; ?>"><p><strong><?php echo $donnees['commentaire']; ?></strong></p>
+            <p><strong><?php echo $donnees['Prenom']; ?> <?php echo $donnees['Nom']; ?> </strong> à <?php echo $donnees['date_commentaire']; ?></p>
+          
+        </div><br>
     <?php
     }
     $reponse->closeCursor();
