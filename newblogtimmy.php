@@ -6,7 +6,7 @@
 </head>
 <body background="images/blurblogtimmy.jpg">
 <div class="header">
-  <img style="width: 100%;" src="http://blackwirefrs.com/wp-content/themes/capitalx/capitalx/assets/images/news_banner.jpg">
+  <img style="width: 100%;" src="https://www.sproutit.co.uk/hs-fs/hubfs/custom/images/blog-banner.jpg?width=1919&name=blog-banner.jpg">
 </div>
 
 <div class="row">

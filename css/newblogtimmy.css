@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -10,9 +9,8 @@ body {
 }
 
 .header {
-
-  font-size: 40px;
-  text-align: center;
+  padding: 20px;
+  background-color: white;
 }
 
 .leftcolumn {   
